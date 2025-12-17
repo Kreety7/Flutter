@@ -1,8 +1,8 @@
-import 'package:instagram/home_page.dart';
+import 'package:instagram/modules/extra/home_page.dart';
 //import 'package:instagram/identity_card.dart';//
-import 'package:instagram/login_screen.dart';
-import 'package:instagram/monday_class.dart';
-import 'package:instagram/signup_screen.dart';
+import 'package:instagram/modules/auth/login_screen.dart';
+import 'package:instagram/modules/extra/monday_class.dart';
+import 'package:instagram/modules/auth/signup_screen.dart';
 
 
 class AppRoute {
