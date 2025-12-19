@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:instagram/modules/home/dashboard_view.dart';
+import 'package:instagram/modules/home/order_screen.dart';
+
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({super.key});
+
+  @override
+  State<BottomNavigation> createState() => _BottomNavigationState();
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
+  int index = 0;
+  final screens = [DashboardView(), OrderScreen(), DashboardView()];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBody: true,
+      body: screens[index],
+      bottomNavigationBar: Theme(
+        data: Theme.of(
+          context,
+        ).copyWith(primaryColor: Colors.white, canvasColor: Colors.white),
+        child: BottomNavigationBar(
+          currentIndex: index,
+          onTap: (value) {
+            setState(() {
+              index = value;
+            });
+          },
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          selectedIconTheme: IconThemeData(
+            color: Colors.deepPurple,
+          ),
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+        ),
+      ),
+    );
+  }
+}
